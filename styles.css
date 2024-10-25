@@ -1,0 +1,783 @@
+/* global styles*/
+* {
+    box-sizing: border-box;
+  }
+  /* colors*/
+  :root{
+    --blue-color: #25A59E;
+    --orange-color: #FF6C19;
+    --white-color: #F8F9FC;
+    --black-color: #262626;
+    /*font size*/
+  }
+  .gilda-display-regular {
+    font-family: "Gilda Display";
+    font-weight: 400;
+    font-style: normal;
+  }
+  .Urbanist {
+    font-family: "Urbanist";
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  }
+  
+  /* global box-sizing to prevent overflow from padding and borders */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Prevent horizontal overflow */
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100vw;
+  }
+  
+  /* Ensure all containers and elements don't exceed the viewport width */
+  img, 
+  video, 
+  iframe, 
+  .container, 
+  .wrapper, 
+  .section, 
+  .content {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Flexbox containers styling */
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+  }
+  
+  /* prevent large negative margins*/
+  .container-image, 
+  .explanation, 
+  .destination {
+    transform: none; 
+    margin: 0 auto; 
+    max-width: 100%;
+  }
+  
+  /* prevent  overflow because of absolute sizing */
+  .blurry, 
+  .ellipse, 
+  .group {
+    position: absolute;
+    max-width: 100%; /* Limit size */
+  }
+  
+  /* Additional adjustments for some sections */
+  .container-image, 
+  .explanation, 
+  .watch, 
+  .click, 
+  .footer {
+    max-width: 100%;
+    overflow-x: hidden;
+  
+  }
+  
+  .nav {
+    display: flex;          
+    align-items: center;       
+    justify-content: space-between; 
+    padding: 10px 20px;        
+  }
+  .nav .button {
+    width: 30px;          
+    height: 30px;           
+    cursor: pointer;          
+  }
+  .nav span {
+    color: #25A59E;
+    font-weight: bold;
+    font-size: 20px; 
+  }
+  
+  /*media query for mobile phone*/
+  @media (max-width: 480px) {
+   
+    .nav .button {
+        width: 20px;
+        height: 20px;
+    }
+  
+    /* Stack navigation items for very small screens */
+    .nav {
+        display: flex;
+        flex-direction: row;
+    }
+    .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px; 
+    }
+    
+  
+    .nav span {
+        font-size: 16px;
+    }
+  }
+  /* Container for the 3 group images */
+  .container-image {
+    position: relative;
+    width: 100%;
+    height: 700px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    overflow: visible; 
+  }
+  
+  /* Blurry image */
+  .blurry {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto; 
+    z-index: 1;
+    object-fit: cover; 
+  }
+  
+  /* Ellipse image */
+  .ellipse {
+    position: absolute;
+    bottom: 0;
+    width: 50%; 
+    z-index: 2;
+    object-fit: contain; 
+  }
+  
+  /* Group image */
+  .group {
+    position: absolute;
+    bottom: 0;
+    width: 60%; 
+    z-index: 3;
+    object-fit: contain;
+  }
+  
+  /* media query for mobile*/
+  @media (max-width: 480px) {
+    .container-image {
+        height: 250px;
+    }
+  
+    .blurry {
+        width: 100%; 
+        height: 180%; 
+        object-fit: none; 
+        bottom: -50px; 
+    }
+  
+    .ellipse, .group {
+        width: 100%; 
+    }
+  }
+  
+  /* Container text */
+  .container-text {
+    text-align: center;     
+    padding: 10px;   
+    margin-bottom: 10px;     
+  }
+  
+  .container-text p {
+    font-family: "Gilda Display";  
+    font-size: 70px;            
+    line-height: 1.4;  
+    font-weight: 400; 
+    margin-bottom: 5px; 
+  }
+  
+  .container-text span{
+    color:  #25A59E;
+    
+  }
+  
+  /* Destination section */
+  .destination {
+    padding: 10px 0px;
+    margin-bottom: 10px;
+    padding-bottom: 70px;
+    width: Fill (335px);
+    height: Hug (164px);
+    gap: 20px;
+  
+  }
+  
+  .destination p {
+    font-size: 72px;
+    font-weight: 400;
+    margin: 0;
+    font-family: "Gilda Display";
+    line-height: 84px;
+    word-break: break-word; 
+    white-space: normal; 
+    text-align: left; 
+  }
+  
+  .destination h4 {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: "Urbanist";
+    text-align: left; 
+  }
+  
+  /* media queries for mobile phones */
+  @media (max-width: 480px) {
+    .destination {
+        padding: 5px;
+        text-align: left; 
+    }
+  
+    .destination p {
+        font-size: 24px;
+        line-height: 32px;
+        text-align: left;
+    }
+  
+    .destination h4 {
+        font-size: 16px;
+        text-align: left; 
+    }
+  }
+  
+  /* General reset and box-sizing */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* General card container styling */
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  /* Individual card styling */
+  .card1, .card2, .card3, .card4, .card5, .card6 {
+    width: 90%;
+    max-width: 400px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  /* Styling for images inside the cards */
+  .card1 img, .card2 img, .card3 img, .card4 img, .card5 img, .card6 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  /* small text styling */
+  .just {
+    padding: 0;
+    text-align: left;
+  }
+  
+  /* Heading (h2) styling for each card */
+  .just h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-family: "Urbanist";
+    font-weight: 700;
+    color: #333;
+  }
+  
+  /* Location container styling */
+  .location-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.7;
+  }
+  
+  /* Location icon styling */
+  .location {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Location text styling */
+  .location-container h4 {
+    font-size: 1em;
+    font-family: "Urbanist";
+    font-weight: 600;
+    color: #333;
+  }
+  
+  /* Media query for mobile */
+  @media (max-width: 768px) {
+    .card-container {
+        padding: 10px;
+        flex-direction: column;
+    }
+  
+    .card1, .card2, .card3, .card4, .card5, .card6 {
+        width: 100%; 
+    }
+  
+    .card1 img, .card2 img, .card3 img, .card4 img, .card5 img, .card6 img {
+        width: 100%; 
+    }
+  
+    .just h2 {
+        font-size: 1.2em; 
+    }
+  
+    .location-container h4 {
+        font-size: 0.9em; 
+    }
+  }
+  
+  
+  /* Styling for the why choose us section */
+  .choose {
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    text-align: center; 
+    padding: 20px; 
+    margin: 0 auto; 
+    max-width: 800px;
+  }
+  
+  /* Styling for the heading 2 */
+  .choose h2 {
+    font-size: 72px;
+    margin-bottom: 10px; 
+    font-family: "GIlda DIsplay";
+    font-weight: 400;
+    size: 72px;
+    line-height: 84px;
+  }
+  
+  /* Styling for the why choose us heading 5 */
+  .choose h5 {
+    font-size: 18px; 
+    line-height: 32px; 
+    color:#737373; 
+    font-family: "Urbanist";
+    font-weight: 500;
+  
+  }
+  
+  /* all card container styling */
+  .card-container-hover {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    height: auto;
+  }
+  
+  /* Individual card styling */
+  .card-2 {
+    background-color: #FFFFFF;
+    width: 300px;
+    height: 300px;
+    flex-shrink: 0;
+    border-top: 5px solid #25A59E;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    gap: 20px;
+    overflow: hidden;
+    transition: background-color 0.3s ease, border-color 0.3s ease; 
+  }
+  
+  /*  Apply hover effect only to the middle card */
+  .card-container-hover .card-2:nth-child(2) { 
+    background-color: #25A59E;
+    border-color: transparent;
+  }
+  
+  .card-container-hover .card-2:nth-child(2) .title-for-card,
+  .card-container-hover .card-2:nth-child(2) .description-for-explanation,
+  .card-container-hover .card-2:nth-child(2) .more-details a {
+    color: #FFFFFF; 
+  }
+  
+  .card-container-hover .card-2:nth-child(2) .action img {
+    filter: brightness(0) invert(1); 
+  }
+  
+  /* Remove hover effect for other cards */
+  .card-2:hover {
+    background-color: #FFFFFF; 
+    border-color: #25A59E;
+  }
+  
+  .card-2:hover .title-for-card,
+  .card-2:hover .description-for-explanation,
+  .card-2:hover .more-details a {
+    color: #0c0000; 
+  }
+  
+  .card-2:hover .action img {
+    filter: none; 
+  }
+  
+  /* Content container styling */
+  .container-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  /* Title for card styling */
+  .title-for-card {
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 600;
+    font-family: "Gilda Display";
+    color: #0c0000;
+    margin-bottom: 15px;
+    text-align: left;
+    white-space: pre-line;
+  }
+  
+  /* styling for Description text */
+  .despacito {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: "Urbanist";
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+  }
+  
+  /* styling for Action section */
+  .action {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  /*styling for More details link */
+  .more-details a {
+    text-decoration: none;
+    color: #25A59E;
+    font-weight: bold;
+    font-family: "Gilda Display";
+    font-size: 16px;
+  }
+  
+  .more-details a:hover {
+    text-decoration: none;
+  }
+  
+  /* Image styling */
+  .action img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  
+  /* Styling for the memorable trip section */
+  .explanation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%; 
+    max-width: 1440px; 
+    height: auto;
+    gap: 26px;
+    margin: auto; 
+    padding-top: 120px;
+    transform: none;
+  }
+  
+  /* Styling for the text container */
+  .text-container {
+    flex: 1;
+    max-width: 60%;
+    text-align: left; 
+  }
+  
+  /* Styling for the image container */
+  .image-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    height: 485px;
+    width: 658px;
+  }
+  
+  /* Styling for the tourist couple image */
+  .photo {
+    height: 485px;
+    margin-left: 20px;
+    width: 658px;
+  }
+  
+  /* Styling for the h2 element */
+  .explanation h2 {
+    font-size: 72px;
+    margin-bottom: 10px;
+    font-family: "Gilda Display";
+    font-weight: 400;
+    line-height: 84px;
+  }
+  
+  /* Styling for the h5 element */
+  .explanation h5 {
+    font-size: 18px;
+    line-height: 32px;
+    color: #080000;
+    font-family: "Urbanist";
+    font-weight: 500;
+  }
+  
+  /*making span element blue */
+  .explanation span {
+    color: #25A59E;
+  }
+  
+  /* the paragraph in video section */
+  .watch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    height: auto; 
+    text-align: center;
+    padding: 20px;
+    padding-top: 150px;
+  }
+  
+  /* Paragraph text in video section */
+  .watch p {
+    font-size: 48px; 
+    font-weight: 400;
+    color: #262626;
+    line-height: 60px;
+    font-family: "Gilda Display";
+    margin-bottom: 50px; 
+    padding: 0 20px; 
+    white-space: nowrap; 
+    overflow-wrap: break-word; 
+  }
+  
+  /* youtube Video styling */
+  .video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    padding-bottom: 100px;
+    padding-top: 100px; 
+  }
+  
+  /* Video element styling */
+  .video iframe {
+    width: 80%; 
+    height: auto;
+    max-width: 1440px;
+    aspect-ratio: 16/9; 
+    border: none;
+  }
+  
+  /* Media query for mobile responsiveness */
+  @media (max-width: 768px) {
+    .watch {
+        padding: 10px;
+        padding-top: 100px;
+    }
+  
+    .watch p {
+        font-size: 36px; 
+        line-height: 50px;
+        margin-bottom: 30px; 
+        white-space: normal; 
+    }
+  
+    .video {
+        padding: 10px;
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+  
+    .video iframe {
+        width: 100%; 
+        height: 250px; 
+    }
+  }
+  
+  /* CTA container styling */
+  .click {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px;
+    border-radius: 8px;
+    padding-left: 50px;
+    padding-right: 50px;
+    gap: 20px; 
+  }
+  
+  /* Styling for the heading */
+  .click h1 {
+    font-size: 2em;
+    margin: 0;
+    font-family: "Gilda Display";
+    font-weight: 400;
+    line-height: 1.2; 
+    color: #262626;
+  }
+  
+  /* Styling for the tourist couple image */
+  .click img {
+    height: 50px;
+    width: auto;
+  }
+  
+  
+    .click h1 {
+        white-space: nowrap; 
+        font-size: 2.5em; 
+    }
+  
+    .click img {
+        height: 60px; 
+        width: auto;
+    }
+  }
+  /* footer styling */
+  .footer {
+    text-align: left;
+    padding: 20px;
+  }
+  
+  /* Footer container styling */
+  .footer {
+    text-align: left;
+    padding: 30px 20px;
+    border-top: 1px solid #b0b0b0;
+    color: #333;
+    font-family: "Urbanist";
+    margin-top: 40px;
+  }
+  
+  /* Styling span text travel */
+  .footer p span {
+    font-weight: 600;
+    font-size: 16px;
+    color: #25A59E;
+    font-family: "Gilda Display";
+    line-height: 18.83px;
+    letter-spacing: 0.1em;
+  }
+  
+  /* Styling for the footer's paragraph */
+  .footer p {
+    margin: 10px 0;
+    line-height: 24px;
+    color: #595959;
+    font-family: "Urbanist";
+    font-weight: 500;
+  }
+  
+  /* social icons and footer-links section */
+  .social-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  /* Styling for the social media section */
+  .social {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+  }
+  
+  /* Styling for the social media icons */
+  .social a img {
+    width: 21.33px;
+    height: 15.33px;
+    color: #25A59E;
+  }
+  
+  /* footer links section styling */
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* Styling for the footer links */
+  .footer-links a {
+    text-decoration: none;
+    color: #595959;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    font-family: "Urbanist";
+    font-weight: 600;
+    line-height: 32px;
+  }
+  
+  /* Hover effect color for footer links*/
+  .footer-links a:hover {
+    color: #007bff;
+  }
+  
+  
+  @media (max-width: 480px) {
+    .social-container {
+        padding: 15px;
+        gap: 16px;
+    }
+  
+    .social {
+        gap: 16px;
+    }
+  
+    .social a img {
+        width: 16px;
+        height: auto;
+    }
+  
+    .footer-links a {
+        font-size: 14px;
+    }
+  }
+    
