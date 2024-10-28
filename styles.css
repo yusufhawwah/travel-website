@@ -233,7 +233,7 @@
         width: 100%; 
     }
   }
-  /* Desktop view 
+  /* Desktop view */
   @media (min-width: 1200px) {
     .container-image {
         height: 800px; 
@@ -252,7 +252,7 @@
     .group {
         width: 60%; 
     }
-  } */
+  } 
   
   /* Container text */
   .container-text {
@@ -737,7 +737,7 @@
     color: #25A59E;
   }
   
-  /* Media query for responsiveness 
+  /* Media query for responsiveness */
   @media (max-width: 768px) {
     .explanation {
         flex-direction: column;
@@ -767,7 +767,7 @@
         white-space: normal; 
         line-height: 1.2; 
     }
-  } */
+  } 
   
   /* Media query for desktop view  */
   @media (min-width: 769px) {
